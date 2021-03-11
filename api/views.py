@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.generics import get_object_or_404
+from rest_framework.mixins import CreateModelMixin, ListModelMixin
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
@@ -9,6 +10,14 @@ from .models import Post, Comment, Group, Follow, User
 from .serializers import CommentSerializer, FollowSerializer
 from .serializers import GroupSerializer, PostSerializer
 from .permissions import IsOwnerOrReadOnly
+
+
+# Здесь нужно было сделать что-то врооде этого или я что-то не так понял?=)...
+class GetAndPostOnlyMethods(
+    CreateModelMixin, ListModelMixin, viewsets.GenericViewSet
+):
+    '''Let to make only GET and POST requests'''
+    pass
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -36,13 +45,13 @@ class CommentViewSet(viewsets.ModelViewSet):
         return Comment.objects.filter(post=post)
 
 
-class GroupViewSet(viewsets.ModelViewSet):
+class GroupViewSet(GetAndPostOnlyMethods):
     serializer_class = GroupSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Group.objects.all()
 
 
-class FollowViewSet(viewsets.ModelViewSet):
+class FollowViewSet(GetAndPostOnlyMethods):
     queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     permission_classes = [IsAuthenticated]
