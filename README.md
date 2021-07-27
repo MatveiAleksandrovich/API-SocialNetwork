@@ -1,6 +1,6 @@
-# API for Social Network
+# REST API for Social Network
 ### Description
-REST API for a previously written [Social Network](https://github.com/MatveiAleksandrovich/SocialNetwork "Named link title"). 
+API for a previously written [Social Network](https://github.com/MatveiAleksandrovich/SocialNetwork "Named link title"). 
 In this project, I worked with models, serializers, different implementations of view classes, as well as routers using the django-rest-framework. Thanks to him, I gained a lot of experience and basic understanding of building a RESTful API.
 
 ### Technology
