@@ -12,7 +12,7 @@ Django-rest-framework
 
 ### Starting project 
 1. Clone repository: ```git clone https://github.com/MatveiAleksandrovich/api_yamdb.git```
-2. Open it in code editor
+2. Open project directory in code editor
 3. Activate virtual environment: ```source venv/bin/activate```
 4. Install requirements: ```pip3 intstall -r requirements.txt```
 5. Make migrations: ```python3 manage.py migrate```
