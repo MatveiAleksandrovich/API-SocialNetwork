@@ -10,9 +10,12 @@ Django 2.2.19
 
 Django-rest-framework
 
-### Starting project
+### Starting project 
 1. Clone repository: ```git clone https://github.com/MatveiAleksandrovich/api_yamdb.git```
-2. Make migrations: ```python3 manage.py migrate```
-3. Create superuser: ```python3 manage.py createsuperuser```
-4. Run server: ```python3 manage.py runserver```
+2. Open it in code editor
+3. Activate virtual environment: ```source venv/bin/activate```
+4. Install requirements: ```pip3 intstall -r requirements.txt```
+5. Make migrations: ```python3 manage.py migrate```
+6. Create superuser: ```python3 manage.py createsuperuser```
+7. Run server: ```python3 manage.py runserver```
 
